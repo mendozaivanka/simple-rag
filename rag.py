@@ -8,18 +8,9 @@ from llama_index.llms.ollama import Ollama
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.core import Settings, SimpleDirectoryReader, VectorStoreIndex
 
-# For ngrok tunnel
-from pyngrok import ngrok, conf
-
 # Setup logging
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
-
-# HuggingFace + LlamaIndex cache dirs
-os.environ["HF_HOME"] = "C:/Users/BasUx/.cache/huggingface"
-os.environ["TRANSFORMERS_CACHE"] = "C:/Users/BasUx/.cache/huggingface"
-os.environ["SENTENCE_TRANSFORMERS_HOME"] = "C:/Users/BasUx/.cache/huggingface"
-os.environ["LLAMA_INDEX_CACHE_DIR"] = "C:/Users/BasUx/.cache/huggingface"
 
 # Init models
 def init_llm():
